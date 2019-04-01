@@ -18,9 +18,7 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
     this.apiService.getPlayers().subscribe((res) => {
-      console.log(res);
       // some arbitrary player
-      this.data = res[12];
     });
   }
 
