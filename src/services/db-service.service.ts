@@ -5,17 +5,14 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 })
 export class DbServiceService {
 
-    private data = null;
-    private http = null;
+    private _data = null;
+    private _http = null;
 
-    constructor(private _http: HttpClient) {
-        _http.get("http://localhost:3000/api/player-stats/").subscribe((res: Response) => {
-            this.data = res;
-        });
+    constructor(private http: HttpClient) {
+
     }
 
-
-    public getData() {
-        return this.data;
+    public async getData() {
+        return await this.http.get("http://localhost:3000/api/player-stats/");
     }
 }

@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {DbServiceService} from "../../../services/db-service.service";
+import {ApiService} from "../../../services/api.service";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
-  styleUrls: ['./dashboard.page.scss'],
-  providers: [DbServiceService]
+  styleUrls: ['./dashboard.page.scss']
 })
+
 export class DashboardPage implements OnInit {
 
   private data = null;
-  playerStatsService: DbServiceService = null;
+  readonly _dbService = null;
 
-  constructor(playerStatsService: DbServiceService) {
-    this.playerStatsService = playerStatsService;
-  }
+  constructor(private apiService: ApiService) { }
+
+  imageSrc = "../../assets/dashboard/curry.jpg";
 
   ngOnInit() {
-    this.data = this.playerStatsService.getData();
-    console.log(this.data);
+    this.apiService.getPlayers().subscribe((res) => {
+      console.log(res);
+      // some arbitrary player
+      this.data = res[12];
+    });
   }
 
 }
