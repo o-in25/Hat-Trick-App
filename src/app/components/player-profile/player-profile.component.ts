@@ -11,6 +11,10 @@ export class PlayerProfileComponent implements OnInit {
 
   constructor() { }
 
+  toggleInfiniteScroll() {
+
+  }
+
   ngOnInit() {
 
   }
