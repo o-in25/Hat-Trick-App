@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// @ts-ignore
 import { PlayerProfilePage } from './player-profile.page';
 
 describe('PlayerProfilePage', () => {
