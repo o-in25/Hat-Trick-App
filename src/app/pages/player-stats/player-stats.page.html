@@ -5,7 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-  <app-player-profile></app-player-profile>
+  <div *ngFor="let player of players">
+    <app-player-profile [player]="player"></app-player-profile>
+  </div>
 
 
 

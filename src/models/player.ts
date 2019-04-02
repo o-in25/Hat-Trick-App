@@ -147,6 +147,6 @@ export class Stats {
 export class Player {
     lastUpdatedOn: String;
     player: Information;
-    team: Object;
+    team: Team;
     stats: Stats;
 }
