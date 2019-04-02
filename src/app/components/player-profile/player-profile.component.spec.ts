@@ -12,8 +12,7 @@ describe('PlayerProfilePage', () => {
     TestBed.configureTestingModule({
       declarations: [ PlayerProfilePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+    }).compileComponents().then();
   }));
 
   beforeEach(() => {

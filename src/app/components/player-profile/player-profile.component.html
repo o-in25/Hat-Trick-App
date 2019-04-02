@@ -1,37 +1,68 @@
-<div class="player-panel">
-  <div class="player-info">
-    <div class="player-name">
-      <h4>{{player.player.firstName}} </h4>
-      <h4>{{player.player.lastName}} </h4>
-    </div>
-    <div class="player-info">
-      <table>
-        <tr>
-          <th><span>Team</span> {{player.team.abbreviation}}</th>
-          <th><span>Position</span> {{player.player.primaryPosition}}</th>
-          <th><span>Number</span> {{player.player.jerseyNumber}}</th>
-          <th><span>Age</span> {{player.player.age}}</th>
-        </tr>
-        <tr>
-          <td><span>Height</span> {{player.player.height}}</td>
-          <td><span>Weight</span> {{player.player.weight}}</td>
-          <td><span>From</span> {{player.player.college}}</td>
-          <td><span>Shoots</span> {{player.player.handedness.shoots}}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
 
-  <div class="table">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-      </tr>
-      <tr>
-        <td>Finn</td>
-        <td>10</td>
-      </tr>
-    </table>
-  </div>
-</div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="player-panel">
+          <div class="player-info">
+            <div class="player-name">
+              <h4>{{player.player.firstName}} </h4>
+              <h4>{{player.player.lastName}} </h4>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="player-info">
+          <div class="player-info">
+            <h4><span>Team:</span> {{player.team.abbreviation}} </h4>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="player-info">
+          <div class="player-info">
+            <h4><span>Position:</span> {{player.player.primaryPosition}} </h4>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="player-info">
+          <div class="player-info">
+            <h4><span>Number:</span> {{player.player.jerseyNumber}}</h4>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="player-info">
+          <div class="player-info">
+            <h4><span>Age:</span> {{player.player.age}} </h4>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+      <ion-col>
+        <div class="player-info">
+          <div class="player-info">
+            <h4><span>Height:</span> {{player.player.height}}</h4>
+            <h4><span>Weight:</span> {{player.player.weight}} </h4>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="player-info">
+          <div class="player-info">
+            <h4><span>From:</span> {{player.player.college}}</h4>
+            <h4><span>Shoots:</span> {{player.player.handedness.shoots}} </h4>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
