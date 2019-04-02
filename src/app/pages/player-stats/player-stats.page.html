@@ -6,7 +6,9 @@
 
 <ion-content padding>
   <h1>Player Stats</h1>
-  <div>
-    {{player.player.firstName}}
+  <div *ngFor="let player of players">
+    <app-player-profile [player]="player">
+
+    </app-player-profile>
   </div>
 </ion-content>
