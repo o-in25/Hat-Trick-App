@@ -14,9 +14,10 @@ export class PlayerStatsPage implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getPlayerWithIdTest(10102).subscribe((data: any) => {
+    this.apiService.getPlayerWithId(15286).subscribe((data: any) => {
+      // some arbitrary player to test
       this.players = data;
-    })
+    });
   }
 
 }

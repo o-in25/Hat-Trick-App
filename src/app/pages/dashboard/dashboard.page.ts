@@ -17,9 +17,7 @@ export class DashboardPage implements OnInit {
   imageSrc = "../../assets/dashboard/curry.jpg";
 
   ngOnInit() {
-    this.apiService.getPlayers().subscribe((res) => {
-      // some arbitrary player
-    });
+
   }
 
 }

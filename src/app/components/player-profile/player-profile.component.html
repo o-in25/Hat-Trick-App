@@ -1,18 +1,39 @@
 
+  <ion-spinner></ion-spinner>
   <ion-grid>
+
     <ion-row>
-      <ion-col>
+      <!-- start of row -->
+      <ion-col size="6">
         <div class="player-panel">
           <div class="player-info">
             <div class="player-name">
               <h4>{{player.player.firstName}} </h4>
               <h4>{{player.player.lastName}} </h4>
+              <app-progress-circle class="p97"></app-progress-circle>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+
+
+      <ion-col>
+        <div class="player-panel">
+          <div class="player-info">
+            <div class="player-name">
+              <ul>
+                <li>{{player.player.age}}</li>
+                <li>{{player.player.height}}</li>
+                <li>{{player.player.weight}}</li>
+                <li>{{player.player.college}}</li>
+              </ul>
             </div>
           </div>
         </div>
       </ion-col>
     </ion-row>
 
+    <!-- end of row -->
     <ion-row>
       <ion-col>
         <div class="player-info">
