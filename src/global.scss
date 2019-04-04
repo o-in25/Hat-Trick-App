@@ -10,7 +10,25 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+/*
+ * Colors
+ */
+$brand-gray: #393F4D;
+$brand-charcoal: #1F2833;
+$brand-teal: #66FCF1;
+$brand-light-gray: #C5C6C7;
+$brand-aqua: #45A29E;
 
-body {
-  font-family: Montserrat;
-}
+/*
+ * Fonts
+ */
+$sports:'Permanent Marker', cursive;
+
+
+/*
+ * Media
+ */
+$phone-size: 412px;
+$mini-tablet-size: 768px;
+$tablet-size: 1024px;
+

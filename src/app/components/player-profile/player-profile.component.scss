@@ -1,46 +1,26 @@
-h1, h2, h3, h4, h5, h6, p, div {
+// set font family
+* {
   font-family: 'Permanent Marker', cursive;
   font-weight: 300;
-}
-
-table {
-  display: block;
-  width: 500px;
-  tr {
-    th {
-      span {
-        font-style: italic;
-      }
-    }
-
-    td {
-      span {
-        font-style: italic;
-      }
-    }
-  }
+  color: white;
+  font-size: 8vw;
 }
 
 ion-grid {
-  background: #45A29E;
+  background: #393f4d;
 }
 
-.table {
-  overflow-x: auto;
-}
-
-.player-name {
-  h4:nth-child(2) {
-    text-transform: uppercase;
-  }
-
-  h4 {
-    display: inline;
-  }
-}
-
-.player-info {
-  span {
-    font-style: italic;
+.player-panel {
+  .player-subpanel {
+    position: relative;
+    left: -50px;
+    li {
+      display: inline;
+      list-style-type: none;
+      padding-right: 20px;
+      float: left;
+    }
   }
 }
+
+
