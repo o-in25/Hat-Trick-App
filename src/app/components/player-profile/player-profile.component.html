@@ -4,82 +4,29 @@
 
     <ion-row>
       <!-- start of row -->
+      <ion-col size="3">
+        <app-progress-circle [circumference]="85"></app-progress-circle>
 
-      <ion-col>
         <div class="player-panel">
-          <app-progress-circle class="p97"></app-progress-circle>
         </div>
       </ion-col>
-
-      <ion-col>
+      <ion-col size="9">
         <div class="player-panel">
-          <div class="player-info">
-            <div class="player-name">
-              <h4>{{player.player.firstName}} </h4>
-              <h4>{{player.player.lastName}} </h4>
-            </div>
-            <div class="player-subpanel">
-                <ul>
-                  <li>Age: {{player.player.age === null? "N/A" : player.player.age}}</li>
-                  <li>Height: {{player.player.height === null? "N/A" : player.player.height}}</li>
-                  <li>Weight: {{player.player.weight === null? "N/A" : player.player.weight}}</li>
-                  <li>From: {{player.player.college === null? "N/A" :player.player.college}}</li>
-                </ul>
-            </div>
-          </div>
+          <h4>{{player.player.firstName}} </h4>
+          <h4>{{player.player.lastName}} </h4>
         </div>
       </ion-col>
     </ion-row>
-
     <!-- end of row -->
     <ion-row>
-      <ion-col>
-        <div class="player-info">
-          <div class="player-info">
-            <h4><span>Team:</span> {{player.team.abbreviation}} </h4>
-          </div>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div class="player-info">
-          <div class="player-info">
-            <h4><span>Position:</span> {{player.player.primaryPosition}} </h4>
-          </div>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div class="player-info">
-          <div class="player-info">
-            <h4><span>Number:</span> {{player.player.jerseyNumber}}</h4>
-          </div>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div class="player-info">
-          <div class="player-info">
-            <h4><span>Age:</span> {{player.player.age}} </h4>
-          </div>
-        </div>
-      </ion-col>
-    </ion-row>
-
-
-
-    <ion-row>
-      <ion-col>
-        <div class="player-info">
-          <div class="player-info">
-            <h4><span>Height:</span> {{player.player.height}}</h4>
-            <h4><span>Weight:</span> {{player.player.weight}} </h4>
-          </div>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div class="player-info">
-          <div class="player-info">
-            <h4><span>From:</span> {{player.player.college}}</h4>
-            <h4><span>Shoots:</span> {{player.player.handedness.shoots}} </h4>
-          </div>
+      <ion-col size="12">
+        <div class="player-panel">
+          <ul>
+            <li class="credentials">Age: {{player.player.age === null? "N/A" : player.player.age}}</li>
+            <li>Height: {{player.player.height === null? "N/A" : player.player.height}}</li>
+            <li>Weight: {{player.player.weight === null? "N/A" : player.player.weight}}</li>
+            <li>From: {{player.player.college === null? "N/A" :player.player.college}}</li>
+          </ul>
         </div>
       </ion-col>
     </ion-row>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-progress-circle',
@@ -6,11 +6,16 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./progress-circle.component.scss'],
 })
 export class ProgressCircleComponent implements OnInit {
-  @Input() class: string;
+  @Input() circumference: number;
 
 
+  private progress(value: number) {
+  }
 
-  constructor() { }
+  constructor() {
+  }
+
+
 
   ngOnInit() {}
 

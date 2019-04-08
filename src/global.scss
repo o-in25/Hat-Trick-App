@@ -18,11 +18,15 @@ $brand-charcoal: #1F2833;
 $brand-teal: #66FCF1;
 $brand-light-gray: #C5C6C7;
 $brand-aqua: #45A29E;
+$brand-white: #FFFFFF;
 
 /*
  * Fonts
  */
 $sports:'Permanent Marker', cursive;
+$smallest-font: 16px;
+$smaller-font: 24px;
+$larger-font: 28px;
 
 
 /*
@@ -32,3 +36,7 @@ $phone-size: 412px;
 $mini-tablet-size: 768px;
 $tablet-size: 1024px;
 
+
+/**
+ * Media queries
+ */

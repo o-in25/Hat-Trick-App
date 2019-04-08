@@ -14,7 +14,6 @@ export class DashboardPage implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
-  imageSrc = "../../assets/dashboard/curry.jpg";
 
   ngOnInit() {
 

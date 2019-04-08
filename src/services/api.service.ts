@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   public getPlayerWithId(id: Number): Observable<Object[]> {
-    return this.httpClient.get<Object[]>(this.baseUrl + "player/" + id);
+    return this.httpClient.get<Player[]>(this.baseUrl + "player/" + id);
   }
 
   public getPlayerWithPointsPerGameGreatherThan(points: Number): Observable<Object[]> {

@@ -1,26 +1,26 @@
 // set font family
+@import '../../../global';
 * {
+
   font-family: 'Permanent Marker', cursive;
   font-weight: 300;
   color: white;
   font-size: 8vw;
 }
 
-ion-grid {
-  background: #393f4d;
+.player-panel {
+  display: block;
+  border: 1px solid red;
 }
 
-.player-panel {
-  .player-subpanel {
-    position: relative;
-    left: -50px;
-    li {
-      display: inline;
-      list-style-type: none;
-      padding-right: 20px;
-      float: left;
-    }
+
+ion-grid {
+  background: $brand-gray;
+}
+
+ul {
+  li {
+    font-size: $smallest-font;
+    display: inline-block;
   }
 }
-
-
