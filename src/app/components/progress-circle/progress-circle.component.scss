@@ -6,7 +6,7 @@
 
 .single-chart {
   width: 100%;
-  justify-content: space-around ;
+  justify-content: space-around;
 }
 
 .circular-chart {
@@ -40,7 +40,7 @@
 }
 
 .circular-chart.green .circle {
-  stroke: #4CC790;
+  stroke: $brand-green;
 }
 
 .circular-chart.blue .circle {
@@ -53,3 +53,21 @@
   font-size: 0.125em;
   text-anchor: middle;
 }
+
+/**
+ *
+ */
+@media screen and (max-width: $ipad-large-screen) {
+  .circular-chart {
+      max-width: 100%;
+  }
+}
+
+@media screen and (min-width: $tablet-small-screen) {
+
+  .percentage {
+    font-size: 8px;
+  }
+
+}
+
