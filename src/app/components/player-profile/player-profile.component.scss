@@ -15,12 +15,39 @@
 
 
 ion-grid {
-  background: $brand-gray;
+  background-image: linear-gradient(to bottom right, $brand-teal, $brand-gray);
 }
 
 ul {
   li {
     font-size: $smallest-font;
     display: inline-block;
+  }
+}
+
+#player-name {
+  height: 100%;
+  h4 {
+    font-size: 32px;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen and (min-width: $tablet-tiny-screen) and (max-width: $tablet-screen) {
+  #player-name {
+    h4 {
+      font-size: 48px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-screen) {
+  #player-name {
+    h4 {
+      font-size: 72px;
+      margin: 0 auto;
+    }
   }
 }

@@ -1,24 +1,21 @@
-
-  <ion-spinner></ion-spinner>
-  <ion-grid>
+ <ion-grid>
 
     <ion-row>
       <!-- start of row -->
       <ion-col size="3">
-        <app-progress-circle [circumference]="85"></app-progress-circle>
-
         <div class="player-panel">
+          <app-progress-circle [circumference]="85"></app-progress-circle>
         </div>
       </ion-col>
       <ion-col size="9">
-        <div class="player-panel">
-          <h4>{{player.player.firstName}} </h4>
-          <h4>{{player.player.lastName}} </h4>
+        <div id="player-name" class="player-panel">
+          <h4>{{player.player.firstName}}<br/>{{player.player.lastName}}</h4>
         </div>
       </ion-col>
     </ion-row>
     <!-- end of row -->
     <ion-row>
+      <!-- start of row -->
       <ion-col size="12">
         <div class="player-panel">
           <ul>
@@ -29,6 +26,9 @@
           </ul>
         </div>
       </ion-col>
+      <!-- end of row -->
     </ion-row>
+
+
   </ion-grid>
 
