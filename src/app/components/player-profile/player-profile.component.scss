@@ -3,9 +3,6 @@
 * {
 
   font-family: 'Permanent Marker', cursive;
-  font-weight: 300;
-  color: white;
-  font-size: 8vw;
 }
 
 .player-panel {
@@ -14,9 +11,7 @@
 }
 
 
-ion-grid {
-  background-image: linear-gradient(to bottom right, $brand-teal, $brand-gray);
-}
+
 
 ul {
   li {
@@ -34,6 +29,49 @@ ul {
 }
 
 
+@media screen and (max-width: $iphone-screen) {
+  #player-name {
+    ion-card-title {
+      font-size: 24px;
+    }
+    ion-card-subtitle {
+      font-size: 20px;
+    }
+  }
+
+  .credential-panel {
+    h3 {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-tiny-screen) and (min-width: $iphone-screen) {
+  .credential-panel {
+    h3 {
+      font-size: 14px;
+    }
+  }
+}
+
+
+@media screen and (max-width: $iphone-small-screen) {
+  #player-name {
+    ion-card-title {
+      font-size: 20px;
+    }
+    ion-card-subtitle {
+      font-size: 16px;
+    }
+  }
+
+  .credential-panel {
+    h3 {
+      font-size: 10px;
+    }
+  }
+}
+
 @media screen and (min-width: $tablet-tiny-screen) and (max-width: $tablet-screen) {
   #player-name {
     h4 {
@@ -50,4 +88,8 @@ ul {
       margin: 0 auto;
     }
   }
+}
+
+ion-buttons {
+  order: 1
 }

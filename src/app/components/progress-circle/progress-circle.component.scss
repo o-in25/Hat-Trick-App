@@ -48,10 +48,8 @@
 }
 
 .percentage {
-  fill: $brand-white;
-  font-family: $sports;
-  font-size: 0.125em;
   text-anchor: middle;
+  font-size: 7px !important;
 }
 
 /**
@@ -66,8 +64,12 @@
 @media screen and (min-width: $tablet-small-screen) {
 
   .percentage {
-    font-size: 8px;
   }
 
 }
 
+@media screen and (max-width: $iphone-screen) {
+  .percentage {
+    font-size: 3px;
+  }
+}

@@ -1,34 +1,46 @@
- <ion-grid>
+<ion-card>
+  <ion-item>
+    <ion-card-header id="player-name">
+      <ion-card-subtitle>{{player.player.firstName}}</ion-card-subtitle>
+      <ion-card-title>{{player.player.lastName}}</ion-card-title>
+    </ion-card-header>
+    <ion-button fill="outline" slot="end">View</ion-button>
+  </ion-item>
 
-    <ion-row>
-      <!-- start of row -->
-      <ion-col size="3">
-        <div class="player-panel">
-          <app-progress-circle [circumference]="85"></app-progress-circle>
-        </div>
-      </ion-col>
-      <ion-col size="9">
-        <div id="player-name" class="player-panel">
-          <h4>{{player.player.firstName}}<br/>{{player.player.lastName}}</h4>
-        </div>
-      </ion-col>
-    </ion-row>
-    <!-- end of row -->
+  <ion-card-content>
     <ion-row>
       <!-- start of row -->
       <ion-col size="12">
         <div class="player-panel">
-          <ul>
-            <li class="credentials">Age: {{player.player.age === null? "N/A" : player.player.age}}</li>
-            <li>Height: {{player.player.height === null? "N/A" : player.player.height}}</li>
-            <li>Weight: {{player.player.weight === null? "N/A" : player.player.weight}}</li>
-            <li>From: {{player.player.college === null? "N/A" :player.player.college}}</li>
-          </ul>
+          <app-progress-circle [circumference]="85"></app-progress-circle>
+        </div>
+      </ion-col>
+
+    </ion-row>
+    <!-- end of row -->
+    <ion-row>
+      <!-- start of row -->
+      <ion-col size="3">
+        <div class="player-panel credential-panel">
+          <h3 class="credentials">Age:<br/>{{player.player.age === null? "N/A" : player.player.age}}</h3>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="player-panel credential-panel">
+          <h3>Height:<br/>{{player.player.height === null? "N/A" : player.player.height}}</h3>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="player-panel credential-panel">
+          <h3>Weight:<br/>{{player.player.weight === null? "N/A" : player.player.weight}}</h3>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="player-panel credential-panel">
+          <h3>From:<br/>{{player.player.college === null? "N/A" :player.player.college}}</h3>
         </div>
       </ion-col>
       <!-- end of row -->
     </ion-row>
-
-
-  </ion-grid>
-
+  </ion-card-content>
+</ion-card>
