@@ -19,7 +19,7 @@
     </ion-row>
     <!-- end of row -->
 
-    <ion-row>
+    <ion-row no-padding>
       <!-- start of row -->
       <ion-col size="3">
         <div class="player-panel credential-panel">
@@ -69,33 +69,79 @@
       <!-- end of row -->
     </ion-row>
 
-
-    <ion-row *ngIf="isExpanded" [@enterAnimation]>
-      <ion-col size="6">
-        <div class="player-panel credential-panel">
-          <app-progress-circle [circumference]="85"></app-progress-circle>
-        </div>
-      </ion-col>
-      <ion-col size="6">
-        <h1>PPG:<br/>{{player.stats.offense.ptsPerGame === null? "N/A" :player.stats.offense.ptsPerGame}}</h1>
-      </ion-col>
-    </ion-row>
-
-    <ion-row *ngIf="isExpanded" [@enterAnimation]>
-      <ion-col size="4">
-        <div class="player-panel credential-panel">
-          <h2>APG:<br/>{{player.stats.offense.astPerGame === null? "N/A" :player.stats.offense.astPerGame}}</h2>
-        </div>
-      </ion-col>
-      <ion-col size="4">
-        <h2>PTS:<br/>{{player.stats.offense.pts === null? "N/A" :player.stats.offense.pts}}</h2>
-      </ion-col>
-      <ion-col size="4">
-        <div class="player-panel credential-panel">
-          <h2>AST:<br/>{{player.stats.offense.ast === null? "N/A" :player.stats.offense.ast}}</h2>
-        </div>
-      </ion-col>
-    </ion-row>
-
+    <div *ngIf="isExpanded" [@enterAnimation]>
+      <h3>Offense</h3>
+      <ion-row>
+        <!-- main offense -->
+        <ion-col size="6">
+          <div class="player-panel credential-panel">
+            <app-progress-circle [circumference]="85"></app-progress-circle>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <h1>PPG:<br/>{{player.stats.offense.ptsPerGame === null? "N/A" :player.stats.offense.ptsPerGame}}</h1>
+        </ion-col>
+        <!-- offense -->
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>APG:<br/>{{player.stats.offense.astPerGame === null? "N/A" :player.stats.offense.astPerGame}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <h2>PTS:<br/>{{player.stats.offense.pts === null? "N/A" :player.stats.offense.pts}}</h2>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>AST:<br/>{{player.stats.offense.ast === null? "N/A" :player.stats.offense.ast}}</h2>
+          </div>
+        </ion-col>
+      </ion-row>
+      <h3>Defense</h3>
+      <ion-row>
+        <!-- main defense -->
+        <ion-col size="6">
+          <div class="player-panel credential-panel">
+            <app-progress-circle [circumference]="85"></app-progress-circle>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <h1>SPG:<br/>{{player.stats.defense.stlPerGame === null? "N/A" : player.stats.defense.stlPerGame}}</h1>
+        </ion-col>
+        <!-- defense -->
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>STL:<br/>{{player.stats.defense.stl === null? "N/A" :player.stats.defense.stl}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>BLK:<br/>{{player.stats.defense.blk === null? "N/A" :player.stats.defense.blk}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <h2>BKA:<br/>{{player.stats.defense.blkAgainst === null? "N/A" :player.stats.defense.blkAgainst}}</h2>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>BAP:<br/>{{player.stats.defense.blkAgainstPerGame === null? "N/A" :player.stats.defense.blkAgainstPerGame}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>BPG:<br/>{{player.stats.defense.blkPerGame === null? "N/A" :player.stats.defense.blkPerGame}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>TOV:<br/>{{player.stats.defense.tov === null? "N/A" : player.stats.defense.tov}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>TPG:<br/>{{player.stats.defense.tovPerGame === null? "N/A" : player.stats.defense.tovPerGame}}</h2>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-card-content>
 </ion-card>
