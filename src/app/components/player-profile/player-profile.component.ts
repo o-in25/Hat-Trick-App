@@ -25,12 +25,15 @@ export class PlayerProfileComponent implements OnInit {
   @Input() player: Player;
 
   isExpanded: boolean = false;
+  isExpandedText: string = "View";
 
   expand(): boolean {
     if(this.isExpanded) {
+      this.isExpandedText = "View";
       this.isExpanded = !this.isExpanded;
       return !this.isExpanded;
     } else if(!this.isExpanded) {
+      this.isExpandedText = "Hide";
       this.isExpanded = !this.isExpanded;
       return this.isExpanded;
     }

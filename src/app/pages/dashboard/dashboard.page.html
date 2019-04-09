@@ -1,46 +1,74 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <a routerLink="/player-stats">
-                    <div id="panel-1" class="panel">
-                        <h1>Player stats</h1>
-                        <img src="../../../assets/img/dashboard/curry.jpg">
-                        <p>Find individual player stats, including player information such as height, weight, handedness, and college, as well as
-                        offensive, defensive, and rebounding statistics</p>
-                    </div>
-                </a>
-            </ion-col>
-            <ion-col>
-                <div id="panel-2" class="panel">
-                    <h1>Team stats</h1>
-                    <img src="../../../assets/img/dashboard/westbrook.jpg">
-                    <p>View team stats, including team rankings, offensive efficiencies, as well defensive rankings</p>
-                </div>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <div id="panel-3" class="panel">
-                    <h1>League Stats</h1>
-                    <img src="../../../assets/img/dashboard/harden.jpg">
-                    <p>See how players stack up against each other in the league stats settings, where metrics of each player are set out to see who
-                    is the best</p>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div id="panel-4" class="panel">
-                    <h1>Search</h1>
-                    <img src="../../../assets/img/dashboard/silver.jpg">
-                    <p>Search any stat of any category of any team</p>
-                </div>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content forceOverscroll="true">
+
+        <ion-item>
+            <ion-grid>
+                <ion-row>
+                    <!-- row start -->
+                    <ion-col size="12" size-md>
+                        <ion-card routerLink="/player-stats">
+                            <img src="../../../assets/img/dashboard/curry.jpg">
+                            <ion-card-header>
+                                <ion-card-title>Player Stats</ion-card-title>
+                            </ion-card-header>
+
+                            <ion-card-content>
+                                Find individual player stats, including player information such as height, weight, handedness, and college, as well as
+                                offensive, defensive, and rebounding statistics
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+
+                    <ion-col size="12" size-md>
+                        <ion-card routerLink="/player-stats">
+                            <img src="../../../assets/img/dashboard/westbrook.jpg">
+                            <ion-card-header>
+                                <ion-card-title>Team Stats</ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                View team stats, including team rankings, offensive efficiencies, as well defensive rankings
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <!-- row end -->
+                </ion-row>
+                <ion-row>
+                    <!-- row start -->
+                    <ion-col size="12" size-md>
+                        <ion-card routerLink="/">
+                            <img src="../../../assets/img/dashboard/harden.jpg">
+                            <ion-card-header>
+                                <ion-card-title>League Stats</ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                See how players stack up against each other in the league stats settings, where metrics of each player are set out to see who
+                                is the best
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col size="12" size-md>
+                        <ion-card routerLink="/">
+                            <img src="../../../assets/img/dashboard/silver.jpg">
+                            <ion-card-header>
+                                <ion-card-title>Search</ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                Search any stat of any category of any team
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <!-- row end -->
+                </ion-row>
+
+            </ion-grid>
+        </ion-item>
 </ion-content>
+
+
+
+

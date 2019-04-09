@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/dashboard">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Player Stats</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,29 +11,4 @@
   <div *ngFor="let player of players">
     <app-player-profile [player]="player"></app-player-profile>
   </div>
-
-
-
-
-
-
-<!--
-
-
-  <ion-button (click)="toggleInfiniteScroll()" expand="block">
-    Toggle Infinite Scroll
-  </ion-button>
-
-  <ion-list></ion-list>
-
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content
-            loadingSpinner="bubbles"
-            loadingText="Loading more data...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-
-
-
--->
 </ion-content>

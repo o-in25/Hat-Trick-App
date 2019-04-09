@@ -4,7 +4,7 @@
       <ion-card-subtitle>{{player.player.firstName}}</ion-card-subtitle>
       <ion-card-title>{{player.player.lastName}}</ion-card-title>
     </ion-card-header>
-    <ion-button fill="outline" slot="end" (click)="expand()">View</ion-button>
+    <ion-button fill="outline" slot="end" (click)="expand()">{{isExpandedText}}</ion-button>
   </ion-item>
 
   <ion-card-content>
