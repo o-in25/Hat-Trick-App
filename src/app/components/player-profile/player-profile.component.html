@@ -33,7 +33,7 @@
       </ion-col>
       <ion-col size="3">
         <div class="player-panel credential-panel">
-          <h3>Position:<br/>{{player.player.primaryPosition === null? "N/A" : player.player.primaryPosition}}</h3>
+          <h3>Plays:<br/>{{player.player.primaryPosition === null? "N/A" : player.player.primaryPosition}}</h3>
         </div>
       </ion-col>
       <ion-col size="3">
@@ -44,7 +44,7 @@
       <!-- end of row -->
     </ion-row>
 
-    <ion-row *ngIf="isExpanded" [@enterAnimation]>
+    <ion-row>
       <!-- start of row -->
       <ion-col size="3">
         <div class="player-panel credential-panel">
@@ -67,6 +67,34 @@
         </div>
       </ion-col>
       <!-- end of row -->
+    </ion-row>
+
+
+    <ion-row *ngIf="isExpanded" [@enterAnimation]>
+      <ion-col size="6">
+        <div class="player-panel credential-panel">
+          <app-progress-circle [circumference]="85"></app-progress-circle>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <h1>PPG:<br/>{{player.stats.offense.ptsPerGame === null? "N/A" :player.stats.offense.ptsPerGame}}</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="isExpanded" [@enterAnimation]>
+      <ion-col size="4">
+        <div class="player-panel credential-panel">
+          <h2>APG:<br/>{{player.stats.offense.astPerGame === null? "N/A" :player.stats.offense.astPerGame}}</h2>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <h2>PTS:<br/>{{player.stats.offense.pts === null? "N/A" :player.stats.offense.pts}}</h2>
+      </ion-col>
+      <ion-col size="4">
+        <div class="player-panel credential-panel">
+          <h2>AST:<br/>{{player.stats.offense.ast === null? "N/A" :player.stats.offense.ast}}</h2>
+        </div>
+      </ion-col>
     </ion-row>
 
   </ion-card-content>
