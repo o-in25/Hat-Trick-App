@@ -9,6 +9,17 @@ import {Player} from "../../../models/player";
 export class PlayerProfileComponent implements OnInit {
   @Input() player: Player;
 
+  isExpanded: boolean = false;
+
+  expand(): boolean {
+    if(this.isExpanded) {
+      this.isExpanded = !this.isExpanded;
+      return !this.isExpanded;
+    } else if(!this.isExpanded) {
+      this.isExpanded = !this.isExpanded;
+      return this.isExpanded;
+    }
+  }
   constructor() { }
 
   toggleInfiniteScroll() {
