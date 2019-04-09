@@ -2,12 +2,12 @@
 @import '../../../global';
 * {
 
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Permanent Marker', cursive !important;
 }
 
 .player-panel {
-  display: block;
-  border: 1px solid red;
+  //display: block;
+  //border: 1px solid red;
 }
 
 

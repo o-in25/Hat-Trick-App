@@ -1,33 +1,7 @@
-
+// set font family
+@import '../../../global';
 
 .panel {
-  height: 400px;
-  h1, p {
-    text-transform: uppercase;
-    text-align: center;
-    font-family: Montserrat;
-    font-weight: 900;
-    color: white
-  }
-  //background-color: #dddddd;
-  img {
-    display: block;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-  }
 
-}
-
-#panel-1 {
-    background: #1F2833
-}
-#panel-2 {
-  background: #66FCF1
-}
-#panel-3 {
-  background: #C5C6C7
-}
-#panel-4 {
-  background: #45A29E
+  font-family: 'Permanent Marker', cursive !important;
 }
