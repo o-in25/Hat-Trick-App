@@ -1,6 +1,6 @@
 // set font family
 @import '../../../global';
-* {
+*:not(ion-button) {
 
   font-family: 'Permanent Marker', cursive !important;
 }
@@ -28,6 +28,12 @@ ul {
   }
 }
 
+.credential-panel {
+  .truncate {
+    font-size: inherit;
+  }
+}
+
 
 @media screen and (max-width: $iphone-screen) {
   #player-name {
@@ -41,7 +47,13 @@ ul {
 
   .credential-panel {
     h3 {
-      font-size: 14px;
+      font-size: 12px !important;
+    }
+  }
+
+  .credential-panel {
+    .truncate {
+      font-size: 9px !important;
     }
   }
 }

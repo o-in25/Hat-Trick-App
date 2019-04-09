@@ -10,25 +10,30 @@ import {Player} from "../../../models/player";
 export class PlayerStatsPage implements OnInit {
   players: Player[] = undefined;
   dataList: Player[] = undefined;
-  index: number = 0;
+  offset: number;
+  maxBuffer: number;
 
   constructor(private apiService: ApiService) {
       this.dataList = [];
+      this.maxBuffer = 25;
+      this.offset = 0;
       // load 25 in;
   }
 
   loadData(event) {
       setTimeout(() => {
         console.log('Done');
-        for(let i = 0; i++ < 25; i++) {
-            this.dataList.push(this.players[i]);
+        for(let i = 0; i++ < this.maxBuffer; i++) {
+            this.dataList.push(this.players[(i + this.offset)]);
         }
         event.target.complete();
 
         // App logic to determine if all data is loaded
         // and disable the infinite scroll
-        if(this.dataList.length == 1000) {
+        if(this.dataList.length == this.players.length) {
           event.target.disabled = true;
+        } else {
+          this.offset += this.maxBuffer;
         }
       }, 500);
   }
@@ -37,9 +42,10 @@ export class PlayerStatsPage implements OnInit {
     this.apiService.getPlayers().subscribe((data: any) => {
       // some arbitrary player to test
       this.players = data;
-      for(let i = 0; i < 25; i++) {
+      for(let i = 0; i < this.maxBuffer; i++) {
         this.dataList.push(this.players[i]);
       }
+      this.offset += this.maxBuffer;
     });
 
   }

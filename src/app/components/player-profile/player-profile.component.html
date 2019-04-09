@@ -63,7 +63,7 @@
       </ion-col>
       <ion-col size="3">
         <div class="player-panel credential-panel">
-          <h3>From:<br/>{{player.player.college === null? "N/A" :player.player.college}}</h3>
+          <h3>From:<br/><span [ngClass]="{'truncate': player.player.college !== null && player.player.college.length > 10}">{{player.player.college === null? "N/A" :player.player.college}}</span></h3>
         </div>
       </ion-col>
       <!-- end of row -->
