@@ -18,26 +18,27 @@
 
     </ion-row>
     <!-- end of row -->
+
     <ion-row>
       <!-- start of row -->
       <ion-col size="3">
         <div class="player-panel credential-panel">
-          <h3 class="credentials">Age:<br/>{{player.player.age === null? "N/A" : player.player.age}}</h3>
+          <h3 class="credentials">Number:<br/>{{player.player.jerseyNumber === null? "N/A" : player.player.jerseyNumber}}</h3>
         </div>
       </ion-col>
       <ion-col size="3">
         <div class="player-panel credential-panel">
-          <h3>Height:<br/>{{player.player.height === null? "N/A" : player.player.height}}</h3>
+          <h3>Team:<br/>{{player.team.abbreviation === null? "N/A" : player.team.abbreviation}}</h3>
         </div>
       </ion-col>
       <ion-col size="3">
         <div class="player-panel credential-panel">
-          <h3>Weight:<br/>{{player.player.weight === null? "N/A" : player.player.weight}}</h3>
+          <h3>Position:<br/>{{player.player.primaryPosition === null? "N/A" : player.player.primaryPosition}}</h3>
         </div>
       </ion-col>
       <ion-col size="3">
         <div class="player-panel credential-panel">
-          <h3>From:<br/>{{player.player.college === null? "N/A" :player.player.college}}</h3>
+          <h3>Shoots:<br/>{{player.player.handedness.shoots === null? "N/A" :player.player.handedness.shoots}}</h3>
         </div>
       </ion-col>
       <!-- end of row -->
