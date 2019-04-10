@@ -75,7 +75,7 @@
         <!-- main offense -->
         <ion-col size="6">
           <div class="player-panel credential-panel">
-            <app-progress-circle [circumference]="85"></app-progress-circle>
+            <app-progress-circle [circumference]="player.stats.ratings.mdRngRtng"></app-progress-circle>
           </div>
         </ion-col>
         <ion-col size="6">
@@ -105,7 +105,7 @@
         <!-- main defense -->
         <ion-col size="6">
           <div class="player-panel credential-panel">
-            <app-progress-circle [circumference]="85"></app-progress-circle>
+            <app-progress-circle [circumference]="player.stats.ratings.blkRtng"></app-progress-circle>
           </div>
         </ion-col>
         <ion-col size="6">
@@ -156,7 +156,7 @@
         <!-- main field goals -->
         <ion-col size="6">
           <div class="player-panel credential-panel">
-            <app-progress-circle [circumference]="85"></app-progress-circle>
+            <app-progress-circle [circumference]="player.stats.ratings.fg3PtRtng"></app-progress-circle>
           </div>
         </ion-col>
         <ion-col size="6">
