@@ -7,12 +7,25 @@ import {trigger, state, style, animate, transition} from "@angular/animations";
 })
 export class ProgressCircleComponent implements OnInit {
   @Input() circumference: number;
+  style: string;
 
 
-  private progress(value: number) {
+  private progress() {
+    if(this.circumference >= 90) {
+      this.style = "green";
+    } else if(this.circumference >= 80) {
+      this.style = "yellow";
+    } else if(this.circumference >= 70) {
+      this.style = "orange";
+    } else if(this.circumference < 70) {
+      this.style = "red";
+    }
+    return this.style;
   }
 
+
   constructor() {
+
   }
 
 

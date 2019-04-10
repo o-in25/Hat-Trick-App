@@ -35,22 +35,30 @@
   }
 }
 
-.circular-chart.orange .circle {
-  stroke: #ff9f00;
-}
 
 .circular-chart.green .circle {
-  stroke: $brand-green;
+  stroke: $circle-green;
 }
 
-.circular-chart.blue .circle {
-  stroke: #3c9ee5;
+.circular-chart.yellow .circle {
+  stroke: $circle-yellow;
 }
+
+.circular-chart.orange .circle {
+  stroke: $circle-orange;
+}
+
+.circular-chart.red .circle {
+  stroke: $circle-red;
+}
+
 
 .percentage {
   text-anchor: middle;
   font-size: 7px !important;
 }
+
+
 
 /**
  *

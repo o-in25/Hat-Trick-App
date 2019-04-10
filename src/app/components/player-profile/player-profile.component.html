@@ -12,7 +12,7 @@
       <!-- start of row -->
       <ion-col size="12">
         <div class="player-panel">
-          <app-progress-circle [circumference]="85"></app-progress-circle>
+          <app-progress-circle [circumference]="player.stats.ratings.ovrRtng === null? 25 : player.stats.ratings.ovrRtng"></app-progress-circle>
         </div>
       </ion-col>
 

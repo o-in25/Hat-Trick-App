@@ -131,6 +131,19 @@ export class Team {
     abbreviation: string;
 }
 
+export class Advanced {
+    tovPct: number;
+    offRtg: number;
+}
+
+export class Ratings {
+    fg3PtRtng: number;
+    mdRngRtng: number;
+    clRngRtng: number;
+    ovrRtng: number;
+
+}
+
 export class Stats {
     gamesPlayed: number;
     fieldGoals: FieldGoals;
@@ -139,6 +152,8 @@ export class Stats {
     offense: Offense;
     defense: Defense;
     miscellaneous: Miscellaneous;
+    advanced: Advanced;
+    ratings: Ratings;
     
 }
 
