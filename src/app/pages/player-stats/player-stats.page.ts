@@ -43,7 +43,6 @@ export class PlayerStatsPage implements OnInit {
     this.apiService.getPlayers().subscribe((data: any) => {
       // some arbitrary player to test
       this.players = data;
-      console.log(data);
       for(let i = 0; i < this.maxBuffer; i++) {
         this.dataList.push(this.players[i]);
       }

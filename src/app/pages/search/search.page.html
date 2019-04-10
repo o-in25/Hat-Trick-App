@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" routerLink="/dashboard">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="search($event)" placeholder="Search anything..." cancelButtonIcon="md-arrow-back"></ion-searchbar>
+  </ion-toolbar>
+
+</ion-content>
