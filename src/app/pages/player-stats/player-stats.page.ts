@@ -12,6 +12,8 @@ export class PlayerStatsPage implements OnInit {
   dataList: Player[] = undefined;
   offset: number;
   maxBuffer: number;
+  // error
+  serverError: string = null;
 
   constructor(private apiService: ApiService) {
       this.dataList = [];
@@ -20,8 +22,28 @@ export class PlayerStatsPage implements OnInit {
       // load 25 in;
   }
 
+  refreshData(event) {
+    setTimeout(() => {
+      console.log('Done');
+      this.apiService.getPlayers().subscribe((data: any) => {
+        // some arbitrary player to test
+        this.players = data;
+        // reset the list
+        this.dataList = [];
+        console.log(data.length);
+        for(let i = 0; i < this.maxBuffer; i++) {
+          this.dataList.push(this.players[i]);
+        }
+        this.offset += this.maxBuffer;
+      }, (error) => {
+        this.serverError = error.message;
+      });
+      event.target.complete();
+
+    }, 500);
+  }
+
   loadData(event) {
-      console.log(this.offset);
       setTimeout(() => {
         console.log('Done');
         for(let i = 0; i++ < this.maxBuffer + 1; i++) {
@@ -47,6 +69,8 @@ export class PlayerStatsPage implements OnInit {
         this.dataList.push(this.players[i]);
       }
       this.offset += this.maxBuffer;
+    }, (error) => {
+      this.serverError = error.message;
     });
 
   }
