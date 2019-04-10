@@ -10,5 +10,12 @@
   <ion-toolbar>
     <ion-searchbar (ionInput)="search($event)" placeholder="Search anything..." cancelButtonIcon="md-arrow-back"></ion-searchbar>
   </ion-toolbar>
-
+  <ion-segment (ionChange)="change($event)">
+    <ion-segment-button value="friends">
+      <ion-label>Friends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Enemies</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-content>

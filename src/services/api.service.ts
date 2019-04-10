@@ -8,7 +8,7 @@ import {Player} from "../models/player";
 })
 export class ApiService {
   baseUrl: string = "http://localhost:3000/api/player-stats/";
-
+  serviceWorkerUrl = "http://localhost:3000/api/service-worker/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,16 +16,15 @@ export class ApiService {
     return this.httpClient.get<Object[]>(this.baseUrl);
   }
 
-  public getPlayerWithIdTest(id: Number): Observable<Player[]> {
+  public getPlayerWithIdTest(id: number): Observable<Player[]> {
     return this.httpClient.get<Player[]>(this.baseUrl + "player/" + id);
   }
-
 
   public getAllPlayers(): Observable<Object[]> {
     return this.httpClient.get<Object[]>(this.baseUrl);
   }
 
-  public getPlayerWithId(id: Number): Observable<Object[]> {
+  public getPlayerWithId(id: number): Observable<Object[]> {
     return this.httpClient.get<Player[]>(this.baseUrl + "player/" + id);
   }
 
@@ -33,5 +32,9 @@ export class ApiService {
     return this.httpClient.get<Object[]>(this.baseUrl + "/player/points/" + points);
   }
 
+  // search for a player
+  public wildcard(search: string): Observable<Player[]> {
+    return this.httpClient.get<Player[]>(this.serviceWorkerUrl + "search/" + search);
+  }
 
 }
