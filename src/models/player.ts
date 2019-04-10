@@ -141,6 +141,10 @@ export class Ratings {
     mdRngRtng: number;
     clRngRtng: number;
     ovrRtng: number;
+    postCntrlRting: number;
+    blkRtng: number;
+
+
 
 }
 

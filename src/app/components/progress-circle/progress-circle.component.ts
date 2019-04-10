@@ -20,6 +20,8 @@ export class ProgressCircleComponent implements OnInit {
     } else if(this.circumference < 70) {
       this.style = "red";
     }
+
+
     return this.style;
   }
 
