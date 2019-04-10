@@ -21,10 +21,11 @@ export class PlayerStatsPage implements OnInit {
   }
 
   loadData(event) {
+      console.log(this.offset);
       setTimeout(() => {
         console.log('Done');
-        for(let i = 0; i++ < this.maxBuffer; i++) {
-            this.dataList.push(this.players[(i + this.offset)]);
+        for(let i = 0; i++ < this.maxBuffer + 1; i++) {
+            this.dataList.push(this.players[(i + this.offset - 1)]);
         }
         event.target.complete();
 
