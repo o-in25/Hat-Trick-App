@@ -79,8 +79,10 @@
           </div>
         </ion-col>
         <ion-col size="6">
-          <h1>PPG:<br/>{{player.stats.offense.ptsPerGame === null? "N/A" :player.stats.offense.ptsPerGame}}</h1>
+          <h1 class="premiere">Points Per Game:<br/>{{player.stats.offense.ptsPerGame === null? "N/A" :player.stats.offense.ptsPerGame}}</h1>
         </ion-col>
+      </ion-row>
+      <ion-row>
         <!-- offense -->
         <ion-col size="4">
           <div class="player-panel credential-panel">
@@ -88,7 +90,9 @@
           </div>
         </ion-col>
         <ion-col size="4">
-          <h2>PTS:<br/>{{player.stats.offense.pts === null? "N/A" :player.stats.offense.pts}}</h2>
+          <div class="player-panel credential-panel">
+            <h2>PTS:<br/>{{player.stats.offense.pts === null? "N/A" :player.stats.offense.pts}}</h2>
+          </div>
         </ion-col>
         <ion-col size="4">
           <div class="player-panel credential-panel">
@@ -105,41 +109,72 @@
           </div>
         </ion-col>
         <ion-col size="6">
-          <h1>SPG:<br/>{{player.stats.defense.stlPerGame === null? "N/A" : player.stats.defense.stlPerGame}}</h1>
+          <h1>Steals Per Game<br/>{{player.stats.defense.stlPerGame === null? "N/A" : player.stats.defense.stlPerGame}}</h1>
         </ion-col>
+      </ion-row>
+
+      <ion-row>
         <!-- defense -->
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <div class="player-panel credential-panel">
             <h2>STL:<br/>{{player.stats.defense.stl === null? "N/A" :player.stats.defense.stl}}</h2>
           </div>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <div class="player-panel credential-panel">
             <h2>BLK:<br/>{{player.stats.defense.blk === null? "N/A" :player.stats.defense.blk}}</h2>
           </div>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <h2>BKA:<br/>{{player.stats.defense.blkAgainst === null? "N/A" :player.stats.defense.blkAgainst}}</h2>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <div class="player-panel credential-panel">
             <h2>BAP:<br/>{{player.stats.defense.blkAgainstPerGame === null? "N/A" :player.stats.defense.blkAgainstPerGame}}</h2>
           </div>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <div class="player-panel credential-panel">
             <h2>BPG:<br/>{{player.stats.defense.blkPerGame === null? "N/A" :player.stats.defense.blkPerGame}}</h2>
           </div>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <div class="player-panel credential-panel">
             <h2>TOV:<br/>{{player.stats.defense.tov === null? "N/A" : player.stats.defense.tov}}</h2>
           </div>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size-xs="4" size-sm="4" size-md="3" size-lg="2">
           <div class="player-panel credential-panel">
             <h2>TPG:<br/>{{player.stats.defense.tovPerGame === null? "N/A" : player.stats.defense.tovPerGame}}</h2>
           </div>
+        </ion-col>
+      </ion-row>
+
+
+      <h3>Field Goals</h3>
+      <ion-row>
+        <!-- main field goals -->
+        <ion-col size="6">
+          <div class="player-panel credential-panel">
+            <app-progress-circle [circumference]="85"></app-progress-circle>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <h1>Three Point Percentage<br/>{{player.stats.fieldGoals.fg3PtPct === null? "N/A" : player.stats.fieldGoals.fg3PtPct}}%</h1>
+        </ion-col>
+        <!-- field goals -->
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>2P%:<br/>{{player.stats.fieldGoals.fg2PtPct === null? "N/A" :player.stats.fieldGoals.fg2PtPct}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="player-panel credential-panel">
+            <h2>FGM:<br/>{{player.stats.fieldGoals.fg2PtMade === null? "N/A" :player.stats.fieldGoals.fg2PtMade}}</h2>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+            <h2>3PA:<br/>{{player.stats.fieldGoals.fg3PtMade === null? "N/A" :player.stats.fieldGoals.fg3PtMade}}</h2>
         </ion-col>
       </ion-row>
     </div>
