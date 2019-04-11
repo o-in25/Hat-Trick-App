@@ -1,21 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start" routerLink="/dashboard">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Search</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start" routerLink="/dashboard">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Search</ion-title>
+    </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-toolbar>
-    <ion-searchbar (ionInput)="search($event)" placeholder="Search anything..." cancelButtonIcon="md-arrow-back"></ion-searchbar>
-  </ion-toolbar>
-  <ion-segment (ionChange)="change($event)">
-    <ion-segment-button value="friends">
-      <ion-label>Friends</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="enemies">
-      <ion-label>Enemies</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+    <ion-toolbar>
+        <ion-searchbar (ionInput)="search($event)" placeholder="Search anything..." cancelButtonIcon="md-arrow-back"></ion-searchbar>
+    </ion-toolbar>
+
+    <div *ngFor="let p of players">
+        <app-player-profile [player]="p"></app-player-profile>
+    </div>
 </ion-content>

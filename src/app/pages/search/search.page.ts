@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../../../services/api.service";
+import {Player} from "../../../models/player";
 
 @Component({
   selector: 'app-search',
@@ -6,19 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
+  players: Player[] = undefined;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   search($event) {
-    let char = $event.target.value;
-    if(char.length % 3 == 0) {
-      console.log('searching again');
+    let term = $event.target.value;
+    if(term.length > 0) {
+      this.apiService.wildcard(term).subscribe((data: any) => {
+        this.players = data;
+        console.log(data);
+      })
+    } else {
+      this.players = [];
     }
   }
 
-  change($event) {
-    console.log($event.target.value);
-  }
 
   ngOnInit() {
 

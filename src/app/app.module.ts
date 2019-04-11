@@ -10,11 +10,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {PlayerProfileComponent} from "./components/player-profile/player-profile.component";
+import {ProgressCircleComponent} from "./components/progress-circle/progress-circle.component";
+import {SharedModule} from "./modules/shared/shared.module";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule, SharedModule],
   providers: [StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent]
 })
