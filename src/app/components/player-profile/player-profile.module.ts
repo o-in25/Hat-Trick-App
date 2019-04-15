@@ -11,7 +11,7 @@ import {SharedModule} from "../../modules/shared/shared.module";
 const routes: Routes = [
     {
         path: '',
-        component: PlayerProfileComponent
+        component: null
     }
 ];
 
@@ -25,6 +25,6 @@ const routes: Routes = [
         IonicModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [PlayerProfileComponent]
+    declarations: []
 })
 export class PlayerProfileModule {}

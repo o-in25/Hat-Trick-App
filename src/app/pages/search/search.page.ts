@@ -13,6 +13,7 @@ export class SearchPage implements OnInit {
   constructor(private apiService: ApiService) { }
 
   search($event) {
+    console.log('im here');
     let term = $event.target.value;
     if(term.length > 0) {
       this.apiService.wildcard(term).subscribe((data: any) => {

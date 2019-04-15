@@ -23,40 +23,41 @@ export class PlayerStatsPage implements OnInit {
   }
 
   refreshData(event) {
-    setTimeout(() => {
-      console.log('Done');
-      this.apiService.getPlayers().subscribe((data: any) => {
-        // some arbitrary player to test
-        this.players = data;
-        // reset the list
-        this.dataList = [];
-        console.log(data.length);
-        for(let i = 0; i < this.maxBuffer; i++) {
-          this.dataList.push(this.players[i]);
-        }
-        this.offset += this.maxBuffer;
-      }, (error) => {
-        this.serverError = error.message;
-      });
-      event.target.complete();
+      setTimeout(() => {
+        console.log('Done');
+          this.apiService.getPlayers().subscribe((data: any) => {
+            // some arbitrary player to test
+            this.players = data;
+            // reset the list
+            this.dataList = [];
+            console.log(data.length);
+            for(let i = 0; i < this.maxBuffer; i++) {
+              this.dataList.push(this.players[i]);
+            }
+            this.offset += this.maxBuffer;
+          }, (error) => {
+            this.serverError = error.message;
+          });
+          event.target.complete();
 
-    }, 500);
+        }, 500);
   }
 
   loadData(event) {
       setTimeout(() => {
-        console.log('Done');
-        for(let i = 0; i++ < this.maxBuffer + 1; i++) {
+        if(this.players != undefined) {
+          for(let i = 0; i++ < this.maxBuffer + 1; i++) {
             this.dataList.push(this.players[(i + this.offset - 1)]);
-        }
-        event.target.complete();
+          }
+          event.target.complete();
 
-        // App logic to determine if all data is loaded
-        // and disable the infinite scroll
-        if(this.dataList.length == this.players.length) {
-          event.target.disabled = true;
-        } else {
-          this.offset += this.maxBuffer;
+          // App logic to determine if all data is loaded
+          // and disable the infinite scroll
+          if(this.dataList.length == this.players.length) {
+            event.target.disabled = true;
+          } else {
+            this.offset += this.maxBuffer;
+          }
         }
       }, 500);
   }
