@@ -40,7 +40,7 @@ export class ApiService {
   }
 
   public getTeamRosters(): Observable<Team[]> {
-    return this.httpClient.get<Team[]>(this.teamStatsUrl + "team/roster")
+    return this.httpClient.get<Team[]>(this.teamStatsUrl + "rosters")
   }
 
 }

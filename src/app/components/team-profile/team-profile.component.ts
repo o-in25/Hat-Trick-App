@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Team} from "../../../models/team";
 
 @Component({
   selector: 'app-team-profile',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team-profile.component.scss'],
 })
 export class TeamProfileComponent implements OnInit {
+  @Input() team: Team;
 
   constructor() { }
 
   ngOnInit() {}
 
 }
+

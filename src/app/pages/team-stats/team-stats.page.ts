@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from "../../../models/team";
+import {ApiService} from "../../../services/api.service";
+import {Player} from "../../../models/player";
 
 @Component({
   selector: 'app-team-stats',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamStatsPage implements OnInit {
 
-  constructor() { }
+  teams: Team[];
+  serverError: string;
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    console.log('Working...');
+    this.apiService.getTeamRosters().subscribe((data: any) => {
+      // some arbitrary player to test
+      this.teams = data;
+      console.log(this.teams);
+    }, (error) => {
+      this.serverError = error.message;
+    });
   }
 
 }

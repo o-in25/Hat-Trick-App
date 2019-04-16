@@ -8,7 +8,25 @@
 </ion-header>
 
 <ion-content padding>
-  <app-team-profile>
 
-  </app-team-profile>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngIf="teams === undefined">
+        <ion-spinner></ion-spinner>
+      </ion-col>
+      <ion-col size="12">
+        <div *ngIf="!serverError">
+          <div *ngFor="let team of teams">
+            <app-team-profile [team]="team"></app-team-profile>
+          </div>
+        </div>
+
+        <div *ngIf="serverError ">
+          <h1>{{serverError}}</h1>
+        </div>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -25,4 +25,6 @@ const routes: Routes = [
     ],
   declarations: [TeamStatsPage]
 })
-export class TeamStatsPageModule {}
+export class TeamStatsPageModule {
+
+}
