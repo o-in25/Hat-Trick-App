@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Player} from "../models/player";
+import {Team} from "../models/team";
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +39,9 @@ export class ApiService {
     return this.httpClient.get<Player[]>(this.serviceWorkerUrl + "search/" + search);
   }
 
-  public getTeamRosters(): Observable<Object[]> {
-    return this.httpClient.get<Object[]>(this.teamStatsUrl + "team/roster")
+  public getTeamRosters(): Observable<Team[]> {
+    return this.httpClient.get<Team[]>(this.teamStatsUrl + "team/roster")
   }
 
 }
+
