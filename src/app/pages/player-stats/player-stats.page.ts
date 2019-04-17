@@ -35,6 +35,16 @@ export class PlayerStatsPage implements OnInit {
        this.showSpinner = false;
     }
 
+    async sortByTeam() {
+        this.showSpinner = true;
+        this.dataList = [];
+        let players = await _.orderBy(this.players, function(player) {
+            return player.team.abbreviation;
+        }, ['asc']);
+        this.dataList = players.slice(0, 49);
+        this.showSpinner = false;
+    }
+
     async presentActionSheet() {
         const actionSheet = await this.actionSheetController.create({
             header: 'Sort By',
@@ -45,14 +55,9 @@ export class PlayerStatsPage implements OnInit {
 
                 }
             }, {
-                text: 'First Name',
+                text: 'Team',
                 handler: () => {
-                    console.log('Share clicked');
-                }
-            }, {
-                text: 'Last Name',
-                handler: () => {
-                    console.log('Share clicked');
+                    this.sortByTeam();
                 }
             },{
                 text: 'Cancel',
