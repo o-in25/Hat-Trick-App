@@ -30,6 +30,10 @@ export class TeamProfileComponent implements OnInit {
 
    }
 
+   overallRating(winPct): number {
+     return Math.ceil(((99 * winPct) / 73)) + 10;
+   }
+
   convertWinningPercentage(winPct): number {
     return Math.ceil(winPct * 100);
   }

@@ -14,11 +14,16 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-                <ion-col size="8">
-                    <h2>Venue: {{team.team.homeVenue.name}}</h2>
-                </ion-col>
-                <ion-col size="4">
-                        <h2>WPCT:<br/>{{convertWinningPercentage(team.stats.standings.winPct)}}%</h2>
+                    <ion-col size="12">
+                        <h2>{{team.team.homeVenue.name}}</h2>
+                    </ion-col>
+                </ion-row>
+            <ion-row>
+                <ion-col size="5">
+                        <app-progress-circle [circumference]="overallRating(team.stats.standings.wins)"></app-progress-circle>
+                    </ion-col>
+                <ion-col size="7">
+                    <h2>WPCT:&nbsp;{{convertWinningPercentage(team.stats.standings.winPct)}}%</h2>
                 </ion-col>
             </ion-row>
             <div *ngIf="isExpanded">
@@ -31,7 +36,7 @@
                             </ion-row>
                         <ion-row>
                             <ion-col size="3">
-                                <h6>PPG:<br/>{{player.stats.fieldGoals.fgPct}}</h6>
+                                <h6>FG%:<br/>{{player.stats.fieldGoals.fgPct}}</h6>
                             </ion-col>
                             <ion-col size="3">
                                 <h6>ORB:<br/>{{player.stats.rebounds.offReb}}</h6>
