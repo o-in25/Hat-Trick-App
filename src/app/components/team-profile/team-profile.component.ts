@@ -9,10 +9,23 @@ import {Team} from "../../../models/team";
 export class TeamProfileComponent implements OnInit {
   @Input() team: Team;
   // the number for the alternate
-  switch: number;
-  set: boolean;
-  private _changeDetectionRef : ChangeDetectorRef
 
+
+  isExpanded: boolean = false;
+  isExpandedText: string = "View";
+
+  expand(): boolean {
+    if(this.isExpanded) {
+      this.isExpandedText = "View";
+      this.isExpanded = !this.isExpanded;
+      return !this.isExpanded;
+    } else if(!this.isExpanded) {
+      this.isExpandedText = "Hide";
+      this.isExpanded = !this.isExpanded;
+      return this.isExpanded;
+    }
+  }
+  
   constructor() {   
 
    }
@@ -21,15 +34,11 @@ export class TeamProfileComponent implements OnInit {
     return Math.ceil(winPct * 100);
   }
 
-  alternate(): boolean {
-    this.set = ((this.switch % 2) == 0);
-    return this.set;
-  }
+  
 
 
   ngOnInit() {
-    this.switch = 0;
-    this.set = true;
+
   }
 
 }
