@@ -23,7 +23,7 @@ export class DetailedTeam {
 
 export class Standings {
     wins: number;
-    loses: number;
+    losses: number;
     winPct: number;
     gamesBack: number;
 }

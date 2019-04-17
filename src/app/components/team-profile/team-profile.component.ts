@@ -11,6 +11,11 @@ export class TeamProfileComponent implements OnInit {
 
   constructor() { }
 
+  convertWinningPercentage(winPct): number {
+    return Math.ceil(winPct * 100);
+  }
+
+
   ngOnInit() {}
 
 }

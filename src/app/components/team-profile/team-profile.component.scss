@@ -1,0 +1,6 @@
+// set font family
+@import '../../../global';
+*:not(ion-button) {
+
+  font-family: 'Permanent Marker', cursive !important;
+}

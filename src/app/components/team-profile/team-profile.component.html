@@ -1,3 +1,21 @@
-<div>
-    <h1>{{team.team.abbreviation}}</h1>
-</div>
+
+<ion-grid>
+    <ion-row>
+        <ion-col size="4">
+            <h2>{{team.team.city}}&nbsp;{{team.team.name}}</h2>
+        </ion-col>
+        <ion-col size="4">
+            <h2>{{team.stats.standings.wins}} - {{team.stats.standings.losses}}</h2>
+        </ion-col>
+        <ion-col size="4">
+                <h2>Have won {{convertWinningPercentage(team.stats.standings.winPct)}}% of games</h2>
+        </ion-col>
+    </ion-row>
+    <h2>Roster</h2>
+    <ion-row>
+        <div *ngFor="let player of team.test">
+            <h2>{{player.player.firstName}}&nbsp;{{player.player.lastName}}</h2>
+
+        </div>
+    </ion-row>
+</ion-grid>

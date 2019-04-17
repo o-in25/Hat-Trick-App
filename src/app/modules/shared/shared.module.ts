@@ -4,6 +4,7 @@ import {PlayerProfileComponent} from "../../components/player-profile/player-pro
 import {ProgressCircleComponent} from "../../components/progress-circle/progress-circle.component";
 import {IonicModule} from "@ionic/angular";
 import {TeamProfileComponent} from "../../components/team-profile/team-profile.component";
+import { RosterPlayerComponent } from 'src/app/components/roster-player/roster-player.component';
 
 @NgModule({
     imports: [
@@ -11,10 +12,10 @@ import {TeamProfileComponent} from "../../components/team-profile/team-profile.c
         IonicModule
     ],
     declarations: [
-        PlayerProfileComponent, ProgressCircleComponent, TeamProfileComponent
+        PlayerProfileComponent, ProgressCircleComponent, TeamProfileComponent, RosterPlayerComponent
     ],
     exports: [
-        PlayerProfileComponent, ProgressCircleComponent, TeamProfileComponent
+        PlayerProfileComponent, ProgressCircleComponent, TeamProfileComponent, RosterPlayerComponent
     ]
 })
 export class SharedModule {}
