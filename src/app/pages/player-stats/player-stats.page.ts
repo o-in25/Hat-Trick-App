@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../../services/api.service";
 import {Player} from "../../../models/player";
-
+import { ActionSheetController } from '@ionic/angular';
+import * as _ from "lodash";
 @Component({
   selector: 'app-player-stats',
   templateUrl: './player-stats.page.html',
@@ -14,13 +15,55 @@ export class PlayerStatsPage implements OnInit {
   maxBuffer: number;
   // error
   serverError: string = null;
+  showSpinner: boolean = false;
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private actionSheetController: ActionSheetController) {
       this.dataList = [];
       this.maxBuffer = 25;
       this.offset = 0;
       // load 25 in;
   }
+
+
+    async sortByRating() {
+      this.showSpinner = true;
+       this.dataList = [];
+       let players = await _.orderBy(this.players, function(player) {
+           return player.stats.offense.ptsPerGame
+       }, ['desc']);
+       this.dataList = players.slice(0, 49);
+       this.showSpinner = false;
+    }
+
+    async presentActionSheet() {
+        const actionSheet = await this.actionSheetController.create({
+            header: 'Sort By',
+            buttons: [{
+                text: 'Rating',
+                handler: () => {
+                    this.sortByRating();
+
+                }
+            }, {
+                text: 'First Name',
+                handler: () => {
+                    console.log('Share clicked');
+                }
+            }, {
+                text: 'Last Name',
+                handler: () => {
+                    console.log('Share clicked');
+                }
+            },{
+                text: 'Cancel',
+                role: 'cancel',
+                handler: () => {
+                    console.log('Cancel clicked');
+                }
+            }]
+        });
+        await actionSheet.present();
+    }
 
   refreshData(event) {
       setTimeout(() => {
@@ -69,6 +112,7 @@ export class PlayerStatsPage implements OnInit {
       for(let i = 0; i < this.maxBuffer; i++) {
         this.dataList.push(this.players[i]);
       }
+      console.log(this.dataList);
       this.offset += this.maxBuffer;
     }, (error) => {
       this.serverError = error.message;
