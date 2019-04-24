@@ -135,6 +135,7 @@ export class Advanced {
     tovPct: number;
     offRtg: number;
     rankingTotal: number;
+    defRankingTotal: number;
 }
 
 export class Ratings {

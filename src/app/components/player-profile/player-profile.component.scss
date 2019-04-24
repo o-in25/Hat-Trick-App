@@ -10,7 +10,16 @@
   //border: 1px solid red;
 }
 
+.title {
+  u {
+    text-decoration: none;
+    border-bottom: 5px solid $brand-aqua;
+  }
+}
 
+.heading {
+  border-bottom: 1px $brand-aqua;
+}
 
 
 ul {

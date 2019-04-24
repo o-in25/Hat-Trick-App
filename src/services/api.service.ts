@@ -43,5 +43,21 @@ export class ApiService {
     return this.httpClient.get<Team[]>(this.teamStatsUrl + "rosters")
   }
 
+  // leaders
+  public getPointsPerGameLeaders(): Observable<Player[]> {
+    return this.httpClient.get<Player[]>(this.serviceWorkerUrl + "/rank/stats/offense/ptsPerGame");
+  }
+
+  public getAssistsPerGameLeaders(): Observable<Player[]> {
+    return this.httpClient.get<Player[]>(this.serviceWorkerUrl + "/rank/stats/offense/astPerGame");
+  }
+
+  public getPlusMinusPerGameLeaders(): Observable<Player[]> {
+    return this.httpClient.get<Player[]>(this.serviceWorkerUrl + "/rank/stats/miscellaneous/plusMinusPerGame");
+  }
+  public getBlocksPerGamePerGameLeaders(): Observable<Player[]> {
+    return this.httpClient.get<Player[]>(this.serviceWorkerUrl + "/rank/stats/defense/blocksPerGame");
+  }
+
 }
 
