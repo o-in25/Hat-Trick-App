@@ -26,9 +26,26 @@
         <ion-col size="3">
           <ion-label>{{player.team.abbreviation}}</ion-label>
         </ion-col>
-        <ion-col size="3">
-          <ion-label>{{player.stats.offense.ptsPerGame}}</ion-label>
-        </ion-col>
+        <div *ngIf="title === 'Points Per Game'">
+          <ion-col size="3">
+            <ion-label>{{player.stats.offense.ptsPerGame}}</ion-label>
+          </ion-col>
+        </div>
+        <div *ngIf="title === 'Assists Per Game'">
+          <ion-col size="3">
+            <ion-label>{{player.stats.offense.astPerGame}}</ion-label>
+          </ion-col>
+        </div>
+        <div *ngIf="title === '+/- Per Game'">
+          <ion-col size="3">
+            <ion-label>{{player.stats.miscellaneous.plusMinusPerGame}}</ion-label>
+          </ion-col>
+        </div>
+        <div *ngIf="title === 'Blocks Per Game'">
+          <ion-col size="3">
+            <ion-label>{{player.stats.defense.blkPerGame}}</ion-label>
+          </ion-col>
+        </div>
       </ion-row>
     </div>
 

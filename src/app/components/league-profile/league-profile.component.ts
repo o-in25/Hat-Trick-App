@@ -9,7 +9,6 @@ import {Player} from "../../../models/player";
 })
 export class LeagueProfileComponent implements OnInit {
   @Input() object: Player[];
-
   @Input() title: string;
 
   constructor() { }
