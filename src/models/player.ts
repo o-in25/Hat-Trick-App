@@ -134,6 +134,7 @@ export class Team {
 export class Advanced {
     tovPct: number;
     offRtg: number;
+    rankingTotal: number;
 }
 
 export class Ratings {

@@ -20,6 +20,7 @@ export class TeamStatsPage implements OnInit {
     this.apiService.getTeamRosters().subscribe((data: any) => {
       // some arbitrary player to test
       this.teams = data;
+      console.log(data);
       console.log(this.teams);
     }, (error) => {
       this.serverError = error.message;

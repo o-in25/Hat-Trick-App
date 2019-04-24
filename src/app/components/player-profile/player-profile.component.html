@@ -14,7 +14,7 @@
       <!-- start of row -->
       <ion-col size="12">
         <div class="player-panel">
-          <app-progress-circle [circumference]="player.stats.ratings.ovrRtng === null? 25 : player.stats.ratings.ovrRtng"></app-progress-circle>
+          <app-progress-circle [circumference]="player.stats.offense.ptsPerGame === null? 60 : ceiling((player.stats.offense.ptsPerGame) + 60)"></app-progress-circle>
         </div>
       </ion-col>
 
@@ -45,7 +45,7 @@
       </ion-col>
       <!-- end of row -->
     </ion-row>
-
+    <hr/>
     <ion-row>
       <!-- start of row -->
       <ion-col size="3">
@@ -76,11 +76,11 @@
       <ion-row>
         <ion-col size="6">
           <div class="player-panel credential-panel">
-            <app-progress-circle [circumference]="77"></app-progress-circle>
+            <app-progress-circle [circumference]="(player.stats.offense.ptsPerGame) + 60"></app-progress-circle>
           </div>
         </ion-col>
         <ion-col size="6">
-          <h1>Ranking<br/>203rd</h1>
+          <h1>Ranking<br/>{{player.stats.advanced.rankingTotal === null? "N/A" : player.stats.advanced.rankingTotal}}</h1>
         </ion-col>
       </ion-row>
       <h6 class="heading">Field Goal Percentages</h6>
@@ -179,7 +179,7 @@
       <ion-row>
         <ion-col size="6">
           <div class="player-panel credential-panel">
-            <app-progress-circle [circumference]="85"></app-progress-circle>
+            <app-progress-circle [circumference]="ceiling((player.stats.offense.ptsPerGame) + 60)"></app-progress-circle>
           </div>
         </ion-col>
         <ion-col size="6">
@@ -215,7 +215,7 @@
       <ion-row>
         <ion-col size="6">
           <div class="player-panel credential-panel">
-            <app-progress-circle [circumference]="95"></app-progress-circle>
+            <app-progress-circle [circumference]="player.stats.defense.stlPerGame === null? 25 : ceiling((player.stats.defense.stlPerGame) * 40)"></app-progress-circle>
           </div>
         </ion-col>
         <ion-col size="6">

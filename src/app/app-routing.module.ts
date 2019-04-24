@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'player-stats', loadChildren: './pages/player-stats/player-stats.module#PlayerStatsPageModule' },
   { path: 'search', loadChildren: './pages/search/search.module#SearchPageModule' },
   { path: 'team-stats', loadChildren: './pages/team-stats/team-stats.module#TeamStatsPageModule' },
+  { path: 'league-stats', loadChildren: './pages/league-stats/league-stats.module#LeagueStatsPageModule' },
 ];
 
 

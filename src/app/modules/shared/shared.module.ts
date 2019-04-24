@@ -18,4 +18,6 @@ import { RosterPlayerComponent } from 'src/app/components/roster-player/roster-p
         PlayerProfileComponent, ProgressCircleComponent, TeamProfileComponent, RosterPlayerComponent
     ]
 })
-export class SharedModule {}
+export class SharedModule {
+
+}

@@ -38,6 +38,10 @@ export class PlayerProfileComponent implements OnInit {
       return this.isExpanded;
     }
   }
+
+  ceiling(num: number) {
+    return Math.ceil(num);
+  }
   constructor() { }
 
   toggleInfiniteScroll() {
